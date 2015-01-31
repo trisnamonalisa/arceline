@@ -1,0 +1,17 @@
+<%= form_for(@mona) do |f| %>
+  <% if @mona.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mona.errors.count, "error") %> prohibited this mona from being saved:</h2>
+
+      <ul>
+      <% @mona.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
